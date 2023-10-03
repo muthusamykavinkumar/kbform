@@ -1,0 +1,140 @@
+/* styles.css */
+
+/* Apply styles to the circular logo */
+.logo {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo img {
+  width: 120px; /* Adjust the logo size as needed */
+  height: 120px; /* Ensure the width and height are equal to create a circular shape */
+  border-radius: 50%; /* Makes the logo circular */
+  border: 5px solid #f39c12; /* Add a thick border with a different color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+}
+
+/* Style the navigation menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 20px;
+  font-size: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f39c12; /* Change color on hover */
+}
+
+/* Style the search bar */
+.search-bar {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  background-color: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #e89e17; /* Change color on hover */
+}
+/*  */
+
+/* Apply styles to the product details container */
+.product-details {
+  text-align: center;
+  margin: 20px;
+}
+
+/* Style the product image */
+.product-details img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #f39c12;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the product name */
+.product-details h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+/* Style the product details (price, age, height, weight) */
+.product-details p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* Style the contact information */
+.contact-info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.contact-info p {
+  margin: 5px 0;
+}
+
+/* Style the CTA (Call to Action) button */
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background-color: #e89e17; /* Change color on hover */
+}
+/* 
+ */
+
+ /* Style for the button container */
+.button-container {
+  position: fixed;
+  bottom: 20px; /* Adjust this value to set the desired distance from the bottom */
+  right: 20px; /* Adjust this value to set the desired distance from the right */
+  z-index: 999; /* Ensure it's above other content */
+}
+
+/* Style for the "Post" button */
+#post-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#post-button:hover {
+  background-color: #0056b3;
+}

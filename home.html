@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="kbfarems.jpg" alt="Your Circular Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Hens</a></li>
+                <li><a href="goat.html">Goats</a></li>
+                <!-- <li><a href="products.html">Products</a></li> -->
+                <!-- <li><a href="contact.html">Contact</a></li> -->
+                <!-- https://script.google.com/macros/s/AKfycbxrfUbkk5lslkdg9sGWGQzl-WfBGHkToKB6uOehzd-wWY0x2GQjEQxvOIvV_zRk95IAOA/exec -->
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div>
+    </header>  
+
+
+    <main>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Product Details</title>
+        </head>
+        <body>
+            <div class="product-details">
+                <img alt="Product Image" id="product-image">
+                <h2>Product Name</h2>
+                <p>Price: $99.99</p>
+                <p>Age: 2 years</p>
+                <p>place: Anthiyur</p>
+                <p>Weight: 5 lbs</p>
+                
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <p>Contact Us:</p>
+                    <p>Email: info@example.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                </div>
+                
+                <!-- Call to Action Button -->
+                <a href="#" class="cta-button">Buy Now</a>
+            </div>
+        
+            <!-- Display data from Google Apps Script -->
+            <ul id="data-list"></ul>
+        
+            <script>
+                // Replace with your actual Google Apps Script web app URL
+                const scriptAppURL = 'https://script.google.com/macros/s/AKfycbyTbExC9sSADlUEiGt1gX_UQR3cIIs6AFaCE9v94JSEUqsr2IPqyY71EhSJQJWU7sL8Yg/exec';
+        
+                const dataList = document.getElementById('data-list');
+        
+                // Fetch data from the Google Apps Script web app
+                fetch(scriptAppURL)
+                    .then(response => response.json())
+                    .then(data => {
+                        const products = data; // Assuming the data contains an array of product objects
+                        
+                        // Reverse the order of products
+                        products.reverse();
+                        
+                        // Loop through the product data
+                        products.forEach(product => {
+                            // Clone the product-details div and append it
+                            const productDetailsDiv = document.querySelector('.product-details').cloneNode(true);
+        
+                            // Update the cloned div with product data
+                            const productImage = productDetailsDiv.querySelector('img');
+                            if (productImage) {
+                                productImage.src = product.photo;
+                                // productImage.alt = product.name; // Set the alt attribute for accessibility
+                            }
+
+                            const productName = productDetailsDiv.querySelector('h2');
+                            if (productName) {
+                                productName.textContent = product.name;
+                            }
+        
+                            const productPrice = productDetailsDiv.querySelector('p:nth-child(3)');
+                            if (productPrice) {
+                                productPrice.textContent = `Price: ${product.price}`;
+                            }
+        
+                            const productAge = productDetailsDiv.querySelector('p:nth-child(4)');
+                            if (productAge) {
+                                productAge.textContent = `Age: ${product.age}`;
+                            }
+        
+                            const productPlace = productDetailsDiv.querySelector('p:nth-child(5)');
+                            if (productPlace) {
+                                productPlace.textContent = `Place: ${product.places}`;
+                            }
+        
+                            const productWeight = productDetailsDiv.querySelector('p:nth-child(6)');
+                            if (productWeight) {
+                                productWeight.textContent = `Weight: ${product.weight}`;
+                            }
+        
+                            const contactwhat = productDetailsDiv.querySelector('.contact-info p:nth-child(2)');
+                            if (contactwhat) {
+                                contactwhat.textContent = `Whatapp: ${product.whatapp}`;
+                            }
+        
+                            const contactPhone = productDetailsDiv.querySelector('.contact-info p:nth-child(3)');
+                            if (contactPhone) {
+                                contactPhone.textContent = `Phone: ${product.phone}`;
+                            }
+        
+                            // Append the updated product-details div to the data-list
+                            dataList.appendChild(productDetailsDiv);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                    });
+            </script>
+        
+        <div class="button-container">
+            <button id="post-button">Post</button>
+        </div>
+        <script>
+            // ... (previous code)
+        
+            // Add an event listener for the "Post" button
+            const postButton = document.getElementById('post-button');
+            postButton.addEventListener('click', () => {
+                // Retrieve the product data that you want to pass to the new page
+                // For example, you can pass the product name as a query parameter
+                const productName = 'ExampleProduct'; // Replace with your actual data
+                
+                // Construct the URL for the new page with the query parameter
+                const newPageURL = `newpage.html?productName=${encodeURIComponent(productName)}`;
+                
+                // Redirect to the new page
+                window.location.href = newPageURL;
+            });
+        </script>
+        
+    </main>
+
+    <footer>
+        <!-- Footer content (e.g., like button, share button) -->
+    </footer>
+</body>
+</html>
